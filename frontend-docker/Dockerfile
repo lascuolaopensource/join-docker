@@ -2,10 +2,10 @@ FROM node:8 AS builder
 
 WORKDIR /home/root/
 
-COPY backend-domains.ts conf/
+COPY frontend-variables.ts conf/
 
 RUN git clone https://github.com/lascuolaopensource/join-frontend.git \
-&& mv conf/backend-domains.ts join-frontend/src/environments/environment.prod.ts \
+&& mv conf/frontend-variables.ts join-frontend/src/environments/environment.prod.ts \
 && cd join-frontend \
 && npm install \
 && npx ng build -prod -aot
