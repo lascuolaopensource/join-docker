@@ -26,10 +26,10 @@ RUN \
 
 WORKDIR /root
 
-COPY our.conf conf/
+COPY backend-variables.conf conf/
 
 RUN git clone https://github.com/lascuolaopensource/join-backend.git \
-&& mv conf/our.conf join-backend/conf/env/prod.conf \
+&& mv conf/backend-variables.conf join-backend/conf/env/prod.conf \
 && cd join-backend \
 && sbt stage
 
